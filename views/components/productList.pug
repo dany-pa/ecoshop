@@ -1,0 +1,6 @@
+include ../utils/mixins.pug
+
+div.content__items.row.align-items-start
+    each item in dataList
+        if item.link
+            +productCard(item)

@@ -1,0 +1,37 @@
+.card-img-top{
+    max-height: 300px;
+    object-fit: contain;
+}
+
+/* .header{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border: 1px solid #000
+}
+
+.aside, .content{
+    border: 1px solid #000;
+    border-top: none;
+    padding: 10px;
+}
+
+.content{
+    border-left: none;
+}
+
+.content__items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.content__items .card{
+    margin-bottom: 30px;
+    flex: 0 0 250px
+}
+
+.title{
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000
+} */

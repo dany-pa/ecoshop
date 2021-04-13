@@ -1,0 +1,36 @@
+aside.col-4.aside
+    h2.title Фильтры
+    form(method="GET", action="/")
+        if filters
+            if filters.type.length > 0
+                div.col-12.border.p-3.mb-3
+                    div.form-label.h5 Тип предмета:
+                    each itemType in filters.type
+                        label.form-check
+                            input.form-check-input(
+                                type="checkbox",
+                                checked=(activeFilters.type.includes(itemType.id.toString())),
+                                value=itemType.id,
+                                name="filter-type[]"
+                            ) 
+                            |#{itemType.name}
+
+            if filters.material.length > 0
+                div.col-12.border.p-3.mb-3
+                    div.form-label.h5 Из чего сделанно:
+                    each material in filters.material
+                        label.form-check
+                            input.form-check-input(
+                                type="checkbox",
+                                checked=(activeFilters.material.includes(material.id.toString())),
+                                value=material.id,
+                                name="filter-material[]"
+                            ) 
+                            |#{material.name}
+
+            div(class="col-12")
+                input(
+                    type="submit"
+                    class=["btn", "btn-primary"]
+                    value="Искать"
+                ) 

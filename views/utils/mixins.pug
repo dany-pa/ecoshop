@@ -1,0 +1,40 @@
+- function getByID(arr, id){return arr.filter(el=>el.id == id)[0]}
+- function clearArr(arr){return arr.filter(el=>el)}
+
+mixin productCard(product)
+    div.card.col-6.mb-3
+        img.card-img-top.h-25(
+            src= product.img,
+        )
+        div.card-body
+            h5.card-title= product.name || '--- НЕ УКАЗАННО ---'
+            - var shop = getByID(filters.shop, product.shop)
+            p Магазин: 
+                a(
+                    href=shop.link || '#',
+                    target="_blank"
+                )=(shop.name || '--- НЕ УКАЗАННО ---')
+            p Цена: #{product.price || '--- НЕ УКАЗАННО ---'} Р
+            p Материал: 
+                - var clearedMaterialsIds = clearArr(product.materials_ids)
+                if clearedMaterialsIds.length > 0
+                    each materialId in clearedMaterialsIds
+                        span #{getByID(filters.material, materialId).name},
+                else 
+                    | --- НЕ УКАЗАННО ---
+            
+            p Тип: 
+                - var clearedTypesIds = clearArr(product.types_ids)
+                if clearedTypesIds.length > 0
+                    each typeId in clearedTypesIds
+                        span #{getByID(filters.type, typeId).name},
+                else 
+                    | --- НЕ УКАЗАННО ---
+
+            a.btn.btn-primary(
+                href=product.link,
+                target="_blank"
+            ) Посмотреть в магазине
+            
+            
+

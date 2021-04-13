@@ -1,0 +1,33 @@
+include ../utils/mixins.pug
+
+- function getByID(arr, id){return arr.filter(el=>el.id == id)[0]};
+- function clearArr(arr){return arr.filter(el=>el)};
+
+div.card.col-6.mb-3
+    img.card-img-top.h-25(
+        src= item.img,
+    )
+    div.card-body
+        h5.card-title= item.name || '--- НЕ УКАЗАННО ---'
+        - var shop = getByID(filters.shop, item.shop)
+        p Магазин: 
+            a(
+                href=shop.link || '#',
+                target="_blank"
+            )=(shop.name || '--- НЕ УКАЗАННО ---')
+        p Цена: #{item.price || '--- НЕ УКАЗАННО ---'} Р
+        +productField("Материал", item.materials_ids )
+        
+        p Тип: 
+            - var clearedTypesIds = clearArr(item.types_ids)
+            if clearedTypesIds.length > 0
+                each typeId in clearedTypesIds
+                    span #{getByID(filters.type, typeId).name},
+            else 
+                | --- НЕ УКАЗАННО ---
+
+        a.btn.btn-primary(
+            href=item.link,
+            target="_blank"
+        ) Посмотреть в магазине
+        

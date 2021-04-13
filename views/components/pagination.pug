@@ -1,0 +1,18 @@
+- function getPaginationLink(page){const url = new URL(curUrl); url.searchParams.set('page', page); return url.toString();}
+
+if pageCount > 1
+    nav
+        ul(class="pagination")
+            if curPage - 1 > 0
+                li.page-item
+                    a.page-link(href=getPaginationLink(curPage - 1)) Назад
+       
+            - var page = 0;
+            while page < pageCount
+                li.page-item(class=(page == curPage - 1 ? "active" : ""))
+                    - page++
+                    a.page-link(href=getPaginationLink(page))= page
+            
+            if (curPage + 1) <= pageCount
+                li.page-item
+                    a.page-link(href=getPaginationLink(curPage + 1)) Вперед
