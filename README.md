@@ -1,5 +1,5 @@
 # Сайт для поиска :leaves:eco-friendly одежды и аксессуаров.
-# ![http://webecoshop.herokuapp.com/](https://img.shields.io/badge/Heroku-9e7cc1) http://webecoshop.herokuapp.com/
+# ![http://webecoshop.herokuapp.com/](https://img.shields.io/badge/Heroku-9e7cc1) <a target="_blank" href="http://webecoshop.herokuapp.com/">http://webecoshop.herokuapp.com/</a>
 
 В базе сайта имеется множество магазинов, которые занимаются производством и продажей :leaves:eco-friendly одежды.
 Я беру товары с их сайтов, заливаю в свою базу, отмечаю из каких материалов они сделаны, и к какой категории относятся.
