@@ -1,7 +1,7 @@
 extends ./layouts/main.pug
 
 block content 
-    main.col-8.content
+    main.col-12.col-lg-8.content
         h2.title=title + (pageCount > 1 ? ": страница " + curPage : "")
 
         if dataList.length > 0

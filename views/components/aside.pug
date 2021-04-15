@@ -1,4 +1,7 @@
-aside.col-4.aside
+button.btn.btn-success.d-block.d-lg-none.filters-btn Фильтры
+
+aside.col-4.d-none.d-lg-block.aside
+    button.btn.btn-success.d-block.d-lg-none.filters-close-btn X
     h2.title Фильтры
     form(method="GET", action="/")
         if filters
@@ -31,6 +34,6 @@ aside.col-4.aside
             div(class="col-12")
                 input(
                     type="submit"
-                    class=["btn", "btn-primary"]
+                    class=["btn", "btn-success"]
                     value="Искать"
                 ) 
