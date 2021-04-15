@@ -2,7 +2,7 @@
 - function clearArr(arr){return arr.filter(el=>el)}
 
 mixin productCard(product)
-    div.card.col-6.mb-3
+    div.card.col-12.col-lg-6.mb-3
         img.card-img-top.h-25(
             src= product.img,
         )
@@ -31,7 +31,7 @@ mixin productCard(product)
                 else 
                     | --- НЕ УКАЗАННО ---
 
-            a.btn.btn-primary(
+            a.btn.btn-success(
                 href=product.link,
                 target="_blank"
             ) Посмотреть в магазине
